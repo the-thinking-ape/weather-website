@@ -62,7 +62,7 @@ of what to do when it gets our code.
     * Key is name for script, Value is what to run from terminal
     * by default package.json file has a test script
 
-```json
+```javascript
 "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
