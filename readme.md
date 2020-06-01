@@ -108,7 +108,21 @@ of what to do when it gets our code.
     * `fetch(/weather?address=...` , thanks to forward slash, this fetch will append this to the current domain
     * In the case of running locally it will use local domain and port and vice versa for heroku
 
+## Deploy to Heroku
 
+1. With command line `cd` into the project repo's root directory folder
+2. Run command: `git push remote_name branch_name` or `git push heroku master`
+    * normally `git push` defaults to our github master
+    * to change the remote we push to, follow the `push` argument with:
+    * the remote to push to name, and the branch to push to name
+    * in our case: `git push heroku master`
+
+If this is the first time we deploy to this heroku remote git repo it should print:
+```bash
+remote: Verifying deploy... done.
+To https://git.heroku.com/thinking-ape-weather-app.git
+ * [new branch]      master -> master
+```
 
 ## Resources
 * [Heroku dev documentation](https://devcenter.heroku.com/)

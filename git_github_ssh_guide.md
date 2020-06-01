@@ -13,6 +13,8 @@
 
 *  `ls -a -l` lists out all files in directory including hidden ones in a table
 
+* `git remote` shows us which remotes we are connected to. In this case we'll have 1 to github and 1 to heroku
+
 ## VScode integrates with git.
 1. All files appearing in green means they haven't been commited. Appearing in orange with 'M' mean they've been modified and are being tracked
 2. If a 'U' appears next to file it means it's untracked
