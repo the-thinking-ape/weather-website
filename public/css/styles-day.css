@@ -1,0 +1,89 @@
+
+/* Course Suggested Styles */
+
+body{
+    color: pink; /* Sets colors for all text inside body w/ some exceptions (anchor tags) */
+    font-family: Arial, Helvetica, sans-serif; /* Sets the font for all objects inside body */
+    max-width: 650px; /* Constrains how wide content can be */
+    margin: 0 auto; /* creates even distributed space on sides of body (first value is top bottom, second is left right */
+    padding: 16px;
+    background-color: rgb(255, 255, 255);
+
+
+    /* flexbox properties */
+    display: flex; /* display sets way to layout elements */
+    flex-direction: column; /* flexbox direction default is rows, so switch to columns */
+    min-height: 100vh; /* set minimum height equal to broswers height, vh-> viewport height, viewport is the part of the browser that displays everything*/
+}
+
+.main-content{
+    flex-grow: 1; /* tells element to take up as much space as it needs inside div. setting it to 1 means it will take up all leftover space */
+}
+
+
+/* Margin puts space between box and other elements, padding puts space inside box  */
+footer{
+    color:rgb(238, 176, 223));
+    border-top: 1px solid rgb(255, 194, 240);
+    margin-top: 16px;
+    padding: 16px 0;
+}
+
+header{
+    margin-top: 16px;
+    margin-bottom: 48px;
+}
+
+h1{
+    font-size: 64px;
+    margin-bottom: 16px;
+}
+
+/* 'header' followed by 'space' followed by 'a', means we 
+target anchor tags only in header div (ie: space means X Y = Y inside of X */
+header a{ 
+    color: hotpink;
+    margin-right: 16px;
+    text-decoration: none; /* remove extra decour, in this case the underline */
+
+}
+
+footer a{ 
+    color: hotpink;
+    margin-right: 16px;
+    text-decoration: none; /* remove extra decour, in this case the underline */
+
+}
+
+header a:visited { /* refers to anchor tags inside header that were visited */
+    color: pink;
+}
+
+footer a:visited { /* refers to anchor tags inside header that were visited */
+    color: pink;
+}
+
+.profilepic { /* class selector allows us to select a class of elements (good to target specific elements) */
+    width: 250px;
+}
+
+  /* Checkout FlexBox for more advanced CSS */
+
+input{
+    border: 1px solid rgb(255, 212, 226); 
+    padding: 8px;
+    color: plum;
+    text-emphasis-color: plum;
+}
+
+::placeholder {
+    color: rgb(239, 185, 255);
+  }
+
+button{
+    cursor: pointer;
+    border: 1px solid rgb(255, 212, 226);
+    background: rgb(255, 212, 226);
+    color: white;
+    padding: 8px;
+}
