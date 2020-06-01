@@ -20,7 +20,7 @@
 4. You can have multiple commits without pushing
 
 
-## Setting up SSH Keys
+## Setting up SSH Keys 
 How to transfer code between our machine/computer and third party repo servers in a secure way?
 Answer: `SSH Keys`, stands for Secure Shell
 
@@ -73,3 +73,45 @@ Last thing to do is to make sure our SSH key pair is used next time we setup an 
 
 
 
+## Github
+A `repository` is a directory that hosts information. On github each project holds our info in its corresponding repo.
+
+Local repo on our machine in the .git directory. Github repo gets access to our code via push, clone and pull command.
+
+To Push your local git repo to a new github repo from our git local repo:
+1. use git command: `git remote add origin git@github.com:the-thinking-ape/weather-website.git`
+    * `git` means this is a git library command
+    * `remote` is a version of project hosted elsewhere (heroku server, github server, local machine). we manipulate it
+    * `add` this adds a remote, altho we could remove them, etc
+    * `origin`, here we choose the name for the remote, in this case we call it origin
+    * `url` next we add the URL for the repository. 2 pieces of info: our username and the repo name
+    * when we run this command it means we added a contact or setup the channel of communication
+2. Go to Github settings and go to SSH keys 
+    * add a new SSH key
+    * give it a title for your machine (or user account)
+    * then under key, paste the id_rsa.pub (your public ssh key)
+    * `cat ~/.ssh/id_rsa.pub` -> this gives us a concatenated string 'cat' concatenates
+        * this gives us everything + email, copy and paste it into Key
+    * then add
+    * test connection with command: `ssh -T git@github.com`
+        * The authenticity of host 'github.com (140.82.118.3)' can't be established.
+        RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.
+        Are you sure you want to continue connecting (yes/no)? yes
+        Warning: Permanently added 'github.com,140.82.118.3' (RSA) to the list of known hosts.
+        Hi the-thinking-ape! You've successfully authenticated, but GitHub does not provide shell access.
+        * if you see the above it means you are correctly able to authenticate w/ github
+    * creating SSH keys and configurig it w/ github (something you only need to do once per user/machine)
+3. `git push -u origin master`
+    * `push` allows us to push our commits to a given remote
+    * `-u` sets up upstream, or default. In this case we said the push default should be to push onto origin master github
+    * `origin` remote name
+    * `master` is the name of the branch
+
+    * when run:
+        ```To github.com:the-thinking-ape/weather-website.git
+            [new branch]      master -> master
+            Branch 'master' set up to track remote branch 'master' from 'origin'.
+        ```
+
+    * this setup a new master branch to coordinate w/ our local master branch
+> for more info on git check other courses
