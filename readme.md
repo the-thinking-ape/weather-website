@@ -119,6 +119,6 @@ To Push your local git repo to a new github repo from our git local repo:
 
 * Special Warning when adding RSA/SSH key 1st time:
     * `Warning: Permanently added the RSA host key for IP address '140.82.118.4' to the list of known hosts.`
-    * [Read Reason on stackoverflow] (https://stackoverflow.com/questions/18711794/warning-permanently-added-the-rsa-host-key-for-ip-address)
+    * [Read Reason on stackoverflow](https://stackoverflow.com/questions/18711794/warning-permanently-added-the-rsa-host-key-for-ip-address)
 
 > for more info on git check other courses
