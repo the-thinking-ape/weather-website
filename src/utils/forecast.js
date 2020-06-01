@@ -6,8 +6,6 @@ const chalk = require('chalk')
 
 const forecast = (latitude, longitude, callback) => {
 
-    // V.1 works  w/ data-api
-    // const url = 'http://api.weatherstack.com/current?access_key=040bab27a93fb7918e834d73989d7c5e&query='+ encodeURIComponent(data.latitude) + ',' + encodeURIComponent(data.longitude) + '&units=m' //dynamic URL inputs lat and long
     const url = 'http://api.weatherstack.com/current?access_key=040bab27a93fb7918e834d73989d7c5e&query='+ encodeURIComponent(latitude) + ',' + encodeURIComponent(longitude) + '&units=m' //dynamic URL inputs lat and long
 
     request({url, json:true}, (error, { body } )=> {  // used shorthand to turn url:url to url. Also destructured response to {body} since it's the only property we r using of it.
@@ -23,10 +21,14 @@ const forecast = (latitude, longitude, callback) => {
             const temperature =  body.current.temperature
             const precipitationProbability = body.current.precip * 100
             const description = body.current.weather_descriptions[0]
-            const forecastText = description + '. It is currently ' + temperature + '°C outdoors and with a ' + precipitationProbability + '% chance of rain. '
+            const weatherIcon = body.current.weather_icons[0]// captures an image icon
+            const windSpeed = body.current.wind_speed
+            const humidity = body.current.humidity
+            const feelslike = body.current.feelslike
+            const forecastText = description + '. It is currently ' + temperature + '°C outdoors with a ' + precipitationProbability + '% chance of rain.\n But because of wind speeds of ' + windSpeed + 'km/h and a humidity of ' + humidity + '% it actually feels like ' + feelslike + '°C outside.'
             
             // const forecastText = response.body
-            callback(undefined, forecastText) // no error so pass undefined in that parameter
+            callback(undefined, forecastText, weatherIcon) // no error so pass undefined in that parameter
         }
     })
 }

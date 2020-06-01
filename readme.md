@@ -138,6 +138,8 @@ Always test locally before deploying to heroku or other production server enviro
     1. `node src/app.js`
     2. `nodemon src/app.js -e hbs,js,css` this one is useful for quick iterations, the 'e' flag tells us what files to refresh server on 'save'
     3. `npm run start`
+* to push to github `git push` = `git push origin master` where origin is the remote name of our github repo.
+* to deploy/push to heroku: `git push heroku master` allowing users to access latest changes on live webapp on heroku
 
 
 

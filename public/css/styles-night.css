@@ -8,7 +8,7 @@ body{
     margin: 0 auto; /* creates even distributed space on sides of body (first value is top bottom, second is left right */
     padding: 16px;
     /* background-color: rgb(255, 255, 255); */
-    background-color:rgb(150, 180, 228);
+    background-color: black;
 
 
     /* flexbox properties */
@@ -73,9 +73,9 @@ footer a:visited { /* refers to anchor tags inside header that were visited */
 input{
     border: 1px solid rgb(255, 212, 226); 
     padding: 8px;
-    color: rgb(253, 204, 253);
-    text-emphasis-color: rgb(243, 209, 243);
-    background-color: rgb(150, 180, 228);
+    color: plum;
+    text-emphasis-color: plum;
+    background-color: black;
 }
 
 ::placeholder {
@@ -87,7 +87,7 @@ button{
     /* cursor: pointer; */
     border: 1px solid rgb(255, 212, 226);
     /* background: rgb(255, 212, 226); */
-    background-color: rgb(150, 180, 228);
+    background-color: black;
     color: rgb(255, 217, 250);;
     padding: 8px;
 }
@@ -96,6 +96,6 @@ button:hover{
     cursor: pointer;
     border: 1px solid rgb(255, 212, 226);
     background: rgb(255, 212, 226);
-    color: rgb(150, 180, 228);
+    color: black;
     padding: 8px;
 }
