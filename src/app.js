@@ -14,6 +14,8 @@ const forecast = require('./utils/forecast')
 
 /* Create Server */
 const app = express()
+const port = process.env.PORT || 3000 // this capture heroku's PORT dynamic enviroment variable value
+// we added the logical or '|| 3000' so that if we run this locally it will not crash and will use 3000 port instead
 
 /* Configure Server */
 /* Define paths for express config */
@@ -30,9 +32,8 @@ app.set('views',viewsPath)
 app.use(express.static(publicDirPath))
 
 /* Run Server to listen for requests via a Port*/
-const port = 3000
 app.listen(port, ()=>{ 
-    console.log(chalk.blue.bold('Server is up on port ' + 3000))
+    console.log(chalk.blue.bold('Server is up on port ' + port))
 })
 
 /* Route Request Handlers (w/ .get()) */
