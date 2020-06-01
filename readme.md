@@ -5,6 +5,8 @@ Unlike github, withe Heroku we can interact w/ the entire website with command-l
 
 Download/install heroku for cml [here](https://devcenter.heroku.com/articles/heroku-cli)
 
+Heroku is production enviroment, in other words a server that anyone around the world with an internet conection can reach this.
+
 ## Setup heroku SSH public key
 1. command line command: `heroku keys:add`
     * when we run this, this looks through our SSH directory and asks us which key we want to upload to our heroku account
@@ -117,12 +119,28 @@ of what to do when it gets our code.
     * the remote to push to name, and the branch to push to name
     * in our case: `git push heroku master`
 
-If this is the first time we deploy to this heroku remote git repo it should print:
+If this is the first deployment it will install dependecies (npm modules) for app, then it gets our process kicked off.
+This will make our app viewable.
+
+If this is the first time we deploy to this heroku remote git repo it should end the print with:
 ```bash
 remote: Verifying deploy... done.
 To https://git.heroku.com/thinking-ape-weather-app.git
  * [new branch]      master -> master
 ```
+We can now go to our link to check out or website.
+
+
+## Adding/Testing new features before deploying them
+Always test locally before deploying to heroku or other production server enviroment.
+* This avoids deploying a broken/buggy version that will affect users.
+* Test locally with either of three commands:
+    1. `node src/app.js`
+    2. `nodemon src/app.js -e hbs,js,css` this one is useful for quick iterations, the 'e' flag tells us what files to refresh server on 'save'
+    3. `npm run start`
+
+
 
 ## Resources
 * [Heroku dev documentation](https://devcenter.heroku.com/)
+* Compare domain providers: https://www.domcomp.com/ 
