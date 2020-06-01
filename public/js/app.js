@@ -1,6 +1,7 @@
 /* use NPM module browserify to use 'require' and module.exports on client side js! */
 // const playSounds = require('./playSound.js') 
 
+
 console.log('Client side JS has loaded!')
 
 // IMPORTANT: https://stackoverflow.com/questions/19059580/client-on-node-uncaught-referenceerror-require-is-not-defined
